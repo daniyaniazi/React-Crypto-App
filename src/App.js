@@ -1,5 +1,18 @@
-function App() {
-  return <div className="App"> Crypto Verse</div>;
-}
+import React from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+import "./App.css";
+import { NavBar } from "./components";
+const App = () => {
+  return (
+    <div className="app">
+      <div className="navbar">
+        <NavBar />
+      </div>
+      <div className="main"></div>
+      <div className="footer"></div>
+    </div>
+  );
+};
 
 export default App;
