@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import millify from "millify";
 import { Typography, Row, Col, Statistic } from "antd";
-import useGetCryptosQuery from "../services/cryptoApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
 import { Link } from "react-router-dom";
 import { News, CryptoCurrencies } from "../components";
 const { Title } = Typography;

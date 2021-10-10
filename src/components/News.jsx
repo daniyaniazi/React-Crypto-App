@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 import useGetCryptoNewsQuery from "../services/cryptoNewsApi";
-import useGetCryptosQuery from "../services/cryptoApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
 
 const { Text, Title } = Typography;
 const { Option } = Select;

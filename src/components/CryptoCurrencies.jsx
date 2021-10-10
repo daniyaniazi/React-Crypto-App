@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import millify from "millify";
 import { Card, Row, Col, Input } from "antd";
-import useGetCryptosQuery from "../services/cryptoApi";
+import { useGetCryptosQuery } from "../services/cryptoApi";
 import { SearchOutlined } from "@ant-design/icons";
 
 const CryptoCurrencies = ({ simplified }) => {

@@ -75,20 +75,26 @@ a:hover {
 }
 
 @media screen and (max-width: 1300px) {
+  .nav-container {
+    width: 25%;
+  }
   .main {
-    margin-left: 50px;
+    margin-left: 6%;
   }
 }
 
 @media screen and (max-width: 1170px) {
   .main {
-    margin-left: 50px;
+    margin-left: 6%;
   }
 }
 
 @media screen and (max-width: 1000px) {
+  .nav-container {
+    width: 30%;
+  }
   .main {
-    margin-left: 100px;
+    margin-left: 12%;
   }
 }
 
