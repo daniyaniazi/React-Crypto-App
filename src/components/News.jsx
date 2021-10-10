@@ -4,6 +4,7 @@ import { Select, Typography, Row, Col, Avatar, Card } from "antd";
 import moment from "moment";
 import useGetCryptoNewsQuery from "../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 
 const { Text, Title } = Typography;
 const { Option } = Select;
@@ -18,11 +19,11 @@ const News = ({ simplified }) => {
     count: count,
   });
 
-  if (isFetching || !cryptoNews?.value) return "Loading ....";
+  if (isFetching || !cryptoNews?.value) return <Loader />;
   return (
     <Row gutter={[24, 24]}>
       {!simplified && (
-        <Col offset={16} span={8}>
+        <Col md={{ span: 8, offset: 16 }} xs={{ span: 24 }} sm={{ span: 24 }}>
           <Select
             style={{ width: "100%" }}
             showSearch

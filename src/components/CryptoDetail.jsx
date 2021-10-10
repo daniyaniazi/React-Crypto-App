@@ -19,6 +19,7 @@ import {
   useGetCryptoDetailsQuery,
   useGetCryptoHistoryQuery,
 } from "../services/cryptoApi";
+import Loader from "./Loader";
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -33,7 +34,7 @@ const CryptoDetail = () => {
     id: id,
     timePeriod: timePeriod,
   });
-  if (isFetching) return "Loading ...";
+  if (isFetching) return <Loader />;
 
   const stats = [
     {
