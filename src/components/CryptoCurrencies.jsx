@@ -1,18 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import millify from "millify";
 import { Card, Row, Col, Input } from "antd";
 import useGetCryptosQuery from "../services/cryptoApi";
+import { SearchOutlined } from "@ant-design/icons";
 
 const CryptoCurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
-  const [cryptos, setCryptos] = useState(cryptoList?.data?.coins);
-
+  const [cryptos, setCryptos] = useState([]);
+  const [searchKey, setSearchKey] = useState("");
   console.log(cryptoList, cryptos);
+  useEffect(() => {
+    const fileteredData = cryptoList?.data?.coins.filter((coin) =>
+      coin.name.toLowerCase().includes(searchKey.toLowerCase())
+    );
+    setCryptos(fileteredData);
+  }, [searchKey, cryptoList]);
+
   if (isFetching) return "Loding...";
   return (
     <>
+      {!simplified && (
+        <>
+          {" "}
+          <Input
+            size="large"
+            placeholder="Search cryptocureency"
+            prefix={<SearchOutlined />}
+            onChange={(e) => setSearchKey(e.target.value)}
+          />
+          <br />
+          <br />
+        </>
+      )}
+
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((currency) => {
           return (

@@ -44,7 +44,7 @@ const HomePage = () => {
           />
         </Col>
       </Row>
-      <div className="home-heading-cntainer">
+      <div className="home-heading-container">
         <Title level={2} className="home-title">
           Top 10 CryptoCurrencies in the world
         </Title>
@@ -53,7 +53,7 @@ const HomePage = () => {
         </Title>
       </div>
       <CryptoCurrencies simplified />
-      <div className="home-heading-cntainer">
+      <div className="home-heading-container">
         <Title level={2} className="home-title">
           Latest Crypto News
         </Title>
